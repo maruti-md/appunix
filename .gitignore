@@ -9,6 +9,12 @@ lerna-debug.log*
 
 node_modules
 dist
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.next
+out
+.next/
 dist-ssr
 *.local
 
