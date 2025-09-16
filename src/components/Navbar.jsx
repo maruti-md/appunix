@@ -40,7 +40,7 @@ export default function Navbar() {
             src={logo} // 👈 replace with your logo path
             alt="AppUnix Logo"
             sx={{
-              height: 40, // adjust as needed
+              height: 60, // adjust as needed
               width: "auto",
             }}
           />

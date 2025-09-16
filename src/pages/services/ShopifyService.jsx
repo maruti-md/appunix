@@ -1,51 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
   Typography,
   Grid,
+  List,
+  ListItemButton,
+  ListItemText,
   Paper,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   Button,
-  Divider,
+  Divider
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { motion } from "framer-motion";
 import PageWrapper from "../../components/PageWrapper";
-
-const shopifyServices = [
-  "Store Setup & Custom Theme Design",
-  "Shopify Plus Enterprise Solutions",
-  "Custom App Development",
-  "App Integration & Automation",
-  "Migration from WooCommerce/Magento",
-  "SEO & Conversion Optimization",
-  "Payment Gateway & Checkout Optimization",
-  "Multi-Currency & Internationalization",
-  "Dropshipping Setup & Automation",
-  "Product Upload & Catalog Management",
-  "Marketing & Growth Strategy",
-  "Speed Optimization & Performance Tuning",
-  "Ongoing Support & Maintenance",
-  "Training & Consultation",
-];
+import shopifyServices  from "../../data/services";
 
 export default function ShopifyService() {
+  const [selected, setSelected] = useState(shopifyServices[0]); // default first service
+
   return (
     <PageWrapper>
       <Box sx={{ width: "100vw", bgcolor: "#121212", color: "white", py: 8 }}>
         <Container maxWidth="lg">
           {/* Hero Section */}
           <Box textAlign="center" sx={{ mb: 8 }}>
-            <ShoppingCartIcon sx={{ fontSize: 70, color: "#00E5FF", mb: 2 }} />
             <Typography
               variant="h3"
               sx={{
                 fontWeight: 800,
-                background: "linear-gradient(90deg, #00E5FF, #29FFC6)",
+                background: "linear-gradient(90deg, #00ffc8d6, #12c256cf)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -62,103 +45,105 @@ export default function ShopifyService() {
               }}
             >
               From startups to enterprises, we provide end-to-end Shopify
-              solutions to design, build, and scale your eCommerce business
-              with trust and performance.
+              solutions to design, build, and scale your eCommerce business.
             </Typography>
           </Box>
 
-          {/* Services Grid */}
-          <Grid container justifyContent={"center"} spacing={4} sx={{ mb: 8 }}>
-            {shopifyServices.map((service, i) => (
-              <Grid item xs={12} sm={6} md={4} key={i}>
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                 
-                  transition={{ delay: i * 0 }}
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0px 6px 18px rgba(0,229,255,0.3)",
-                  }}
-                >
-                  <Paper
-                    sx={{
-                      p: 3,
-                      bgcolor: "#1e1e1e",
-                      borderRadius: "16px",
-                      textAlign: "center",
-                      border: "1px solid #333",
-                      minHeight: "120px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {service}
-                  </Paper>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
+<Divider sx={{ mb: 6, borderColor: "#049750ff" }} />
+         <Box
+  sx={{
+    display: "flex",
+    flexDirection: { xs: "column", md: "row" }, // stack on mobile, side by side on desktop
+    gap: 3,
+    alignItems: "stretch", // ✅ makes both columns equal height
+  }}
+>
+  {/* Left Menu */}
+  <Paper
+    sx={{
+      bgcolor: "#1e1e1e",
+      borderRadius: "16px",
+      p: 1,
+      flex: "0 0 280px", // fixed width for menu
+      display: "flex",
+      flexDirection: "column",
+      height: "100%", // full height
+    }}
+  >
+    <List disablePadding sx={{ flex: 1 }}>
+      {shopifyServices.map((service, i) => (
+        <ListItemButton
+          key={i}
+          selected={selected.title === service.title}
+          onClick={() => setSelected(service)}
+          sx={{
+            borderRadius: "8px",
+            mb: 1,
+            "&.Mui-selected": {
+              bgcolor: "rgba(0,229,255,0.15)",
+              borderLeft: "1px solid #00E5FF",
+            },
+          }}
+        >
+          <ListItemText
+            primary={service.title}
+            primaryTypographyProps={{
+              sx: { color: "white" },
+            }}
+          />
+        </ListItemButton>
+      ))}
+    </List>
+  </Paper>
 
-          {/* FAQ Section */}
-          <Divider variant="inset"/>
-          <Box sx={{ mb: 8, maxWidth: "800px", mx: "auto", my: 6 }}>
-            <Typography
-              variant="h4"
-              align="center"
-              sx={{ mb: 4, fontWeight: 700 }}
-            >
-              Frequently Asked Questions
-            </Typography>
-            {[
-              {
-                q: "Can you migrate my existing store to Shopify?",
-                a: "Yes, we migrate stores from WooCommerce, Magento, Wix, and more without losing data.",
-              },
-              {
-                q: "Do you offer Shopify Plus solutions?",
-                a: "Absolutely! We provide advanced customization and automation for Shopify Plus.",
-              },
-              {
-                q: "Do you provide long-term support?",
-                a: "Yes, we offer monthly support, performance monitoring, and security updates.",
-              },
-            ].map((faq, i) => (
-              <Accordion
-                key={i}
-                sx={{ bgcolor: "#1e1e1e", color: "white", mb: 2 }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-                >
-                  <Typography sx={{ fontWeight: 600 }}>{faq.q}</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography sx={{ color: "gray" }}>{faq.a}</Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
-          </Box>
+  {/* Right Content */}
+  <motion.div
+    key={selected.title}
+    initial={{ opacity: 0, x: 40 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+    style={{ flex: 1, display: "flex" }}
+  >
+    <Paper
+      sx={{
+        p: 5,
+        bgcolor: "#1e1e1e",
+        borderRadius: "16px",
+        border: "1px solid #333",
+        flex: 1, // ✅ fills remaining space
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Typography
+        variant="h4"
+        sx={{ mb: 2, fontWeight: 700, color: "#00E5FF" }}
+      >
+        {selected.title}
+      </Typography>
+      <Typography  variant="body1" sx={{ whiteSpace: "pre-line", mb: 4, color: "gray", fontSize: "1.05rem" }}>
+        {selected.description}
+      </Typography>
+      <Button
+        variant="contained"
+        sx={{
+          background: "linear-gradient(90deg, #00E5FF, #29FFC6)",
+          color: "black",
+          fontWeight: 600,
+          borderRadius: "10px",
+          px: 4,
+          py: 1.2,
+          alignSelf: "flex-start",
+        }}
+      >
+        Explore {selected.title}
+      </Button>
+    </Paper>
+  </motion.div>
+</Box>
 
-          {/* CTA Section */}
-          <Box textAlign="center">
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                background: "linear-gradient(90deg, #00E5FF, #29FFC6)",
-                color: "black",
-                fontWeight: 700,
-                borderRadius: "12px",
-                px: 6,
-                py: 1.5,
-              }}
-            >
-              Get Started with Shopify
-            </Button>
-          </Box>
+          
         </Container>
       </Box>
     </PageWrapper>
