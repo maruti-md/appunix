@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import services from "../data/services";
+import ServicesSlider from "../components/ServicesSlider";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
       <Box
         component="section"
         sx={{
-          width: "100vw",
+          width: "100%",
           minHeight: "90vh",
           display: "flex",
           alignItems: "center",
@@ -108,78 +109,7 @@ export default function Home() {
       </Box>
 
       {/* Services Preview Section */}
-      <Box
-        component="section"
-        sx={{
-          width: "100%",
-          bgcolor: "#121212",
-          color: "white",
-          py: 10,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Typography
-            variant="h3"
-            align="center"
-            sx={{ fontWeight: 700, mb: 6 }}
-          >
-            What We Offer
-          </Typography>
-
-          <Grid container spacing={4} justifyContent="center">
-            {services.slice(0, 3).map((service, i) => (
-              <Grid item xs={12} sm={6} md={4} key={i}>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.2 }}
-                >
-                  <Paper
-                    sx={{
-                      p: 4,
-                      bgcolor: "#1e1e1e",
-                      borderRadius: "16px",
-                      textAlign: "center",
-                      height: "100%",
-                    }}
-                  >
-                    <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
-                      {service.title}
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "gray" }}>
-                      {service.description}
-                    </Typography>
-                  </Paper>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-
-          <Box sx={{ textAlign: "center", mt: 6 }}>
-            <Button
-              component={Link}
-              to="/services"
-              variant="contained"
-              size="large"
-              sx={{
-                bgcolor: "#00e5ff",
-                color: "#000",
-                fontWeight: 700,
-                borderRadius: "30px",
-                px: 4,
-                py: 1.5,
-                "&:hover": {
-                  transform: "translateY(-3px)",
-                  boxShadow: "0px 10px 30px rgba(0,229,255,0.25)",
-                },
-              }}
-            >
-              View All Services
-            </Button>
-          </Box>
-        </Container>
-      </Box>
+     <ServicesSlider />
     </PageWrapper>
   );
 }

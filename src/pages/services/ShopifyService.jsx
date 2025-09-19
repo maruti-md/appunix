@@ -23,7 +23,7 @@ export default function ShopifyService() {
       <Box sx={{ width: "100vw", bgcolor: "#121212", color: "white", py: 8 }}>
         <Container maxWidth="lg">
           {/* Hero Section */}
-          <Box textAlign="center" sx={{ mb: 8 }}>
+          <Box textAlign="left" sx={{ mb: 8 }}>
             <Typography
               variant="h3"
               sx={{
@@ -39,8 +39,8 @@ export default function ShopifyService() {
               sx={{
                 mt: 2,
                 color: "gray",
-                maxWidth: "700px",
-                mx: "auto",
+                maxWidth: "500px",
+                // mx: "auto",
                 fontSize: "1.1rem",
               }}
             >
@@ -49,7 +49,7 @@ export default function ShopifyService() {
             </Typography>
           </Box>
 
-<Divider sx={{ mb: 6, borderColor: "#049750ff" }} />
+<Divider sx={{ mb: 6, borderColor: "#049750ff", borderWidth:3, opacity:0.6}} />
          <Box
   sx={{
     display: "flex",
@@ -77,11 +77,10 @@ export default function ShopifyService() {
           selected={selected.title === service.title}
           onClick={() => setSelected(service)}
           sx={{
-            borderRadius: "8px",
             mb: 1,
             "&.Mui-selected": {
               bgcolor: "rgba(0,229,255,0.15)",
-              borderLeft: "1px solid #00E5FF",
+              borderRight: "2px solid #049750ff",
             },
           }}
         >
@@ -92,8 +91,11 @@ export default function ShopifyService() {
             }}
           />
         </ListItemButton>
+        
       ))}
+      
     </List>
+   
   </Paper>
 
   {/* Right Content */}
