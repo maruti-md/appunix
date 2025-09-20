@@ -20,10 +20,14 @@ const menuItems = [
 ];
 
 const serviceDropdown = [
-  { label: "Store Setup & Theme", path: "/services/store-setup" },
-  { label: "Custom Apps", path: "/services/custom-apps" },
-  { label: "SEO Optimization", path: "/services/seo" },
-  { label: "Ongoing Support", path: "/services/support" },
+ { label: "💻 Software Development", path: "/services/software-development" },
+{ label: "🛒 E-Commerce Solutions", path: "/services/e-commerce-solutions" },
+{ label: "🏪 Local Business Digitization", path: "/services/local-business-digitization" },
+{ label: "☁️ Cloud & DevOps", path: "/services/cloud-devops" },
+{ label: "📊 Data & AI Solutions", path: "/services/data-ai" },
+{ label: "🌍 Digital Marketing Services", path: "/services/digital-marketing" },
+{ label: "🚀 SaaS & Product Development", path: "/services/saas-product-development" },
+// { label: "🔒 Cybersecurity Services", path: "/services/cybersecurity" },
 ];
 
 export default function Navbar() {
@@ -44,7 +48,7 @@ export default function Navbar() {
       elevation={0}
       sx={{
         borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-        backgroundColor: "rgba(15, 20, 30, 0.4)", // transparent effect
+        backgroundColor: "rgba(240, 245, 255, 0.1)", // transparent effect
         backdropFilter: "blur(12px)", // blur effect
         WebkitBackdropFilter: "blur(12px)", // Safari support
         px: { xs: 2, md: 4 },
@@ -104,7 +108,7 @@ export default function Navbar() {
                   PaperProps={{
                     sx: {
                       mt: 1,
-                      bgcolor: "rgba(20,20,30,0.9)",
+                      bgcolor: "rgba(10, 10, 12, 0.94)",
                       borderRadius: 2,
                       border: "1px solid rgba(0,255,255,0.2)",
                       color: "white",

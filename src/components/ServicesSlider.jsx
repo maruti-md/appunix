@@ -74,7 +74,7 @@ export default function ServicesSlider() {
       >
         What We Offer
       </Typography>
-      <Divider sx={{ mb: 4, bgcolor: "rgba(255,255,255,0.1)", border: "1px solid rgba(106, 121, 104, 0.51)" }} />
+      <Divider sx={{ mb: 4, bgcolor: "rgba(255, 255, 255, 0)", border: "2px solid rgba(106, 121, 104, 0.19)" }} />
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
   navigation
@@ -108,8 +108,8 @@ export default function ServicesSlider() {
                   borderRadius: "16px",
                   background:
                     "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))",
-                  border: "1px solid rgba(0,255,200,0.06)",
-                  boxShadow: "0px -10px 20px rgba(7, 164, 98, 0.6)",
+                  border: "2px solid rgba(0,255,200,0.06)",
+                  // boxShadow: "0px -10px 20px rgba(7, 164, 98, 0.6)",
                   backdropFilter: "blur(8px)",
                   color: "white",
                   height: "100%",

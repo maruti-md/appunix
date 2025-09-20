@@ -38,12 +38,12 @@ const Card = styled(MuiCard)(({ theme }) => ({
 
 // Full-width wrapper
 const SignUpContainer = styled(Box)(() => ({
-  width: '100vw',
+  width: '98vw',
   minHeight: '100vh',   // ✅ was height, now minHeight so page scrolls if needed
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
+  background: "linear-gradient(135deg, #182428ff 0%, #204339ff 50%, #2c644fff 100%)",
   color: 'white',
   overflowY: 'auto',    // ✅ allow vertical scrolling
   padding: '2rem 1rem', // ✅ some breathing space so footer doesn't overlap
@@ -112,11 +112,10 @@ export default function SignUp() {
       <CssBaseline />
       <SignUpContainer>
         <Card variant="outlined">
-          <ComputerIcon sx={{ fontSize: 40, color: '#00e5ff', mb: 1 }} />
           <Typography
             component="h1"
             variant="h4"
-            sx={{ fontWeight: 700, textAlign: 'center', mb: 2 }}
+            sx={{ fontWeight: 700, textAlign: 'center', mb: 2, color: "#d0dcddf9" }}
           >
             Sign up
           </Typography>

@@ -26,12 +26,71 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           background:
-            "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
+            "linear-gradient(135deg, #182428ff 0%, #204339ff 50%, #2c644fff 100%)",
           color: "white",
-          py: { xs: 8, md: 12 },
+          py: { xs: 8, md: 8 },
           overflowX: "hidden",
         }}
       >
+
+         {/* Left glow */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "40%",
+                  height: "100%",
+                  background: "radial-gradient(circle at left, rgba(0,255,0,0.15), transparent 70%)",
+                  zIndex: 0,
+                }}
+              />
+              {/* Right glow */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "40%",
+                  height: "100%",
+                  background: "radial-gradient(circle at right, rgba(128,0,255,0.15), transparent 70%)",
+                  zIndex: 0,
+                }}
+              />
+        
+              {/* SVG arc lines */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "300px",
+                  zIndex: 1,
+                  opacity: 0.2,
+                }}
+              >
+                <svg width="100%" height="100%" viewBox="0 0 1440 300" preserveAspectRatio="none">
+                  <path
+                    d="M0,300 Q720,-100 1440,300"
+                    stroke="white"
+                    strokeOpacity="0.1"
+                    fill="none"
+                  />
+                  <path
+                    d="M0,300 Q720,-50 1440,300"
+                    stroke="white"
+                    strokeOpacity="0.08"
+                    fill="none"
+                  />
+                  <path
+                    d="M0,300 Q720,0 1440,300"
+                    stroke="white"
+                    strokeOpacity="0.05"
+                    fill="none"
+                  />
+                </svg>
+              </Box>
         <Container maxWidth="lg">
           <motion.div
            initial={{ opacity: 0, y: 40 }}
@@ -45,16 +104,16 @@ export default function Home() {
                 letterSpacing: 0.5,
                 lineHeight: 1.05,
                 fontSize: {
-                  xs: "2.6rem",
-                  sm: "3.8rem",
-                  md: "5rem",
-                  lg: "6rem",
+                  xs: "1.6rem",
+                  sm: "2.8rem",
+                  md: "4rem",
+                  lg: "5rem",
                 },
                 mb: 2,
                 textShadow: "0 6px 30px rgba(0,0,0,0.6)",
               }}
             >
-              Innovating IT Solutions
+              Building Smarter Digital Solutions for a Connected Future
             </Typography>
           </motion.div>
 
@@ -64,8 +123,8 @@ export default function Home() {
     transition={{ duration: 0.8 }}
           >
             <Typography variant="h6" sx={{ mb: 4, fontWeight: 400 }}>
-              Empowering businesses with next-gen technology, AI, and cloud
-              services.
+              At AppUnix, we help businesses grow through custom software,
+              cloud solutions, and digital transformation services tailored to your needs.
             </Typography>
 
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
@@ -85,7 +144,7 @@ export default function Home() {
                   },
                 }}
               >
-                Get Started
+                Get a Free Consultation
               </Button>
 
               <Button
@@ -96,7 +155,7 @@ export default function Home() {
                   borderRadius: "30px",
                   px: 4,
                   py: 1.5,
-                  borderColor: "rgba(255,64,129,0.5)",
+                  borderColor: "rgba(255, 255, 255, 0.91)",
                   color: "rgba(255, 255, 255, 1)",
                   "&:hover": { transform: "translateY(-3px)" },
                 }}

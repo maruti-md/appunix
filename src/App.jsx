@@ -11,10 +11,11 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import SignUp from "./pages/SignUp";
 import ShopifyService from "./pages/services/ShopifyService";
+import "./App.css";
 
 const darkTheme = createTheme({
   palette: { mode: "dark", primary: { main: "#00e5ff" }, secondary: { main: "#ff4081" } },
-  typography: { fontFamily: "'Poppins', sans-serif" },
+  typography: { fontFamily: "'Poppins','Inter'" },
 });
 
 function AnimatedRoutes() {

@@ -67,7 +67,7 @@ export default function Services() {
           sx={{
             width: "100vw",
             minHeight: "80vh",
-            bgcolor: "#121212",
+           background: "linear-gradient(135deg, #182428ff 0%, #204339ff 50%, #2c644fff 100%)",
             color: "white",
             py: 6,
           }}
