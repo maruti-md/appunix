@@ -7,6 +7,7 @@ import {
   Stack,
   Menu,
   MenuItem,
+  Divider,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -20,13 +21,13 @@ const menuItems = [
 ];
 
 const serviceDropdown = [
- { label: "💻 Software Development", path: "/services/software-development" },
-{ label: "🛒 E-Commerce Solutions", path: "/services/e-commerce-solutions" },
-{ label: "🏪 Local Business Digitization", path: "/services/local-business-digitization" },
-{ label: "☁️ Cloud & DevOps", path: "/services/cloud-devops" },
-{ label: "📊 Data & AI Solutions", path: "/services/data-ai" },
-{ label: "🌍 Digital Marketing Services", path: "/services/digital-marketing" },
-{ label: "🚀 SaaS & Product Development", path: "/services/saas-product-development" },
+ { label: "Software Development", path: "/services/software-development" },
+{ label: "E-Commerce Solutions", path: "/services/e-commerce-solutions" },
+{ label: "Local Business Digitization", path: "/services/local-business-digitization" },
+{ label: "Cloud & DevOps", path: "/services/cloud-devops" },
+{ label: "Data & AI Solutions", path: "/services/data-ai" },
+{ label: "Digital Marketing Services", path: "/services/digital-marketing" },
+{ label: "SaaS & Product Development", path: "/services/saas-product-development" },
 // { label: "🔒 Cybersecurity Services", path: "/services/cybersecurity" },
 ];
 
@@ -47,11 +48,12 @@ export default function Navbar() {
       position="sticky"
       elevation={0}
       sx={{
-        borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-        backgroundColor: "rgba(240, 245, 255, 0.1)", // transparent effect
+        // borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+        backgroundColor: "rgba(240, 245, 255, 0.07)", // transparent effect
         backdropFilter: "blur(12px)", // blur effect
         WebkitBackdropFilter: "blur(12px)", // Safari support
         px: { xs: 2, md: 4 },
+        py: 1,
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -117,9 +119,9 @@ export default function Navbar() {
                     },
                   }}
                 >
-                  {serviceDropdown.map((sub) => (
+                {serviceDropdown.map((sub) => (
+                  <React.Fragment key={sub.path}>
                     <MenuItem
-                      key={sub.path}
                       component={Link}
                       to={sub.path}
                       onClick={handleDropdownClose}
@@ -129,7 +131,9 @@ export default function Navbar() {
                     >
                       {sub.label}
                     </MenuItem>
-                  ))}
+                    <Divider variant="middle" component="li" />
+                  </React.Fragment>
+                ))}
                 </Menu>
               </React.Fragment>
             ) : (

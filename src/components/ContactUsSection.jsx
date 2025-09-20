@@ -87,7 +87,7 @@ export default function ContactUs() {
           }}
         >
           <Typography variant="h5" sx={{ mb: 3, fontWeight: "bold" }}>
-            Contact Form
+            Contact Us
           </Typography>
 
           {/* Input Fields */}
