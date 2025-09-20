@@ -26,7 +26,7 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           background:
-            "linear-gradient(135deg, #182428ff 0%, #204339ff 50%, #2c644fff 100%)",
+            "linear-gradient(135deg, #1e2c31ff 0%, #112922ff 50%, #2c644fff 100%)",
           color: "white",
           py: { xs: 8, md: 8 },
           overflowX: "hidden",
@@ -41,7 +41,7 @@ export default function Home() {
                   left: 0,
                   width: "40%",
                   height: "100%",
-                  background: "radial-gradient(circle at left, rgba(0,255,0,0.15), transparent 70%)",
+                  background: "radial-gradient(circle at left, rgba(12, 43, 100, 0.22), transparent 70%)",
                   zIndex: 0,
                 }}
               />

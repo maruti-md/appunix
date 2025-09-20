@@ -9,9 +9,8 @@ export default function AboutUsSection() {
   return (
     <PageWrapper>
       <Box
-        component="section"
         sx={{
-          width: "100vw",
+          width: "98.78vw",
           // marginLeft: "calc(50% - 50vw)",
           minHeight: "100vh",
           display: "flex",

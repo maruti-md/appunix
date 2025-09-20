@@ -1,17 +1,20 @@
 import React from "react";
 import { Box, TextField, Button, Typography, Paper, Grid } from "@mui/material";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
+import PageWrapper from "../components/PageWrapper";
+
 
 export default function ContactUs() {
   return (
-    <Box
-      sx={{
-        width: "98vw",
-        fontFamily: "'Inter'",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        // background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
+    <PageWrapper>
+      <Box
+        sx={{
+          width: "98.78vw",
+          fontFamily: "'Inter'",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          // background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
     background: "linear-gradient(135deg, #609dac68 0%, #204339ff 50%, #245442ff 100%)",
         
         color: "white",
@@ -170,6 +173,7 @@ export default function ContactUs() {
         </Box>
       </Paper>
     </Box>
+    </PageWrapper>
   );
 };
 
