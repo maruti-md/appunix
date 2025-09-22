@@ -43,7 +43,8 @@ const SignUpContainer = styled(Box)(() => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: "linear-gradient(135deg, #182428ff 0%, #204339ff 50%, #2c644fff 100%)",
+  // background: "linear-gradient(135deg, #182428ff 0%, #204339ff 50%, #2c644fff 100%)",
+  background: "radial-gradient(circle at 20% 30%, #204339ff, #000 80%)",
   color: 'white',
   overflowY: 'auto',    // ✅ allow vertical scrolling
   padding: '2rem 1rem', // ✅ some breathing space so footer doesn't overlap
@@ -178,11 +179,11 @@ export default function SignUp() {
             </FormControl>
 
             <FormControlLabel
-              control={<Checkbox value="allowExtraEmails" color="primary" />}
+              control={<Checkbox value="allowExtraEmails" color="success" />}
               label="I want to receive updates via email."
             />
 
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 2 }}>
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 2, bgcolor: "#00ff88ff", color: "#000", fontWeight: "bold", "&:hover": { bgcolor: "#0c8c5dff" } }}>
               Sign up
             </Button>
           </Box>

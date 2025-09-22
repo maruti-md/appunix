@@ -25,8 +25,9 @@ export default function Home() {
           minHeight: "90vh",
           display: "flex",
           alignItems: "center",
-          background:
-            "linear-gradient(135deg, #1e2c31ff 0%, #112922ff 50%, #2c644fff 100%)",
+          // background:
+          //   "linear-gradient(135deg, #1e2c31ff 0%, #112922ff 50%, #2c644fff 100%)",
+            background: "radial-gradient(circle at 20% 30%, #204339ff, #000 80%)",
           color: "white",
           py: { xs: 8, md: 8 },
           overflowX: "hidden",

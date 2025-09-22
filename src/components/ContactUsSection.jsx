@@ -15,7 +15,8 @@ export default function ContactUs() {
           alignItems: "center",
           justifyContent: "center",
           // background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
-    background: "linear-gradient(135deg, #609dac68 0%, #204339ff 50%, #245442ff 100%)",
+    // background: "linear-gradient(135deg, #609dac68 0%, #204339ff 50%, #245442ff 100%)",
+    background: "radial-gradient(circle at 20% 30%, #204339ff, #000 80%)",
         
         color: "white",
         p: 2,

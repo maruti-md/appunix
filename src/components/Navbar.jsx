@@ -72,7 +72,7 @@ export default function Navbar() {
             src={logo}
             alt="AppUnix Logo"
             sx={{
-              height: 45,
+              height: 60,
               width: "auto",
               mr: 1,
             }}
