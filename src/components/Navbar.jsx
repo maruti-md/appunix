@@ -24,10 +24,10 @@ const serviceDropdown = [
  { label: "Software Development", path: "/services/software-development" },
 { label: "E-Commerce Solutions", path: "/services/e-commerce-solutions" },
 { label: "Local Business Digitization", path: "/services/local-business-digitization" },
-{ label: "Cloud & DevOps", path: "/services/cloud-devops" },
-{ label: "Data & AI Solutions", path: "/services/data-ai" },
+// { label: "Cloud & DevOps", path: "/services/cloud-devops" },
+// { label: "Data & AI Solutions", path: "/services/data-ai" },
 { label: "Digital Marketing Services", path: "/services/digital-marketing" },
-{ label: "SaaS & Product Development", path: "/services/saas-product-development" },
+// { label: "SaaS & Product Development", path: "/services/saas-product-development" },
 // { label: "🔒 Cybersecurity Services", path: "/services/cybersecurity" },
 ];
 

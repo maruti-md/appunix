@@ -62,14 +62,14 @@ export default function ServicesSlider() {
   return (
     <Box sx={{ py: 10, px: 2, background: "transparent" }}>
       <Typography
-        variant="h3"
+        variant="h2"
         align="center"
         sx={{
           mb: 2,
           fontWeight: "bold",
-          background: "linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%)",
+          // background: "linear-gradient(90deg,rgba(255, 255, 255, 0.28) 0%,rgba(255, 255, 255, 0.07)) 50%, rgba(237, 221, 83, 1) 100%)",
           WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
+          WebkitTextFillColor: "#ffffffff",
         }}
       >
         What We Offer
@@ -107,8 +107,8 @@ export default function ServicesSlider() {
                   p: 3,
                   borderRadius: "16px",
                   background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))",
-                  border: "2px solid rgba(0,255,200,0.06)",
+                    "linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.17))",
+                  // border: "2px solid rgba(0,255,200,0.06)",
                   // boxShadow: "0px -10px 20px rgba(7, 164, 98, 0.6)",
                   backdropFilter: "blur(8px)",
                   color: "white",
@@ -122,20 +122,20 @@ export default function ServicesSlider() {
               >
                 <Box>
                   <Typography
-                    variant="h5"
-                    sx={{ mb: 1, fontWeight: 800, color: "#00ffa6ff" }}
+                    variant="h4"
+                    sx={{ mb: 1, fontWeight: 800, color: "#ff970eff" }}
                   >
                     {service.title}
                   </Typography>
-
+                  <Divider sx={{ mb: 3, bgcolor: "rgba(255, 255, 255, 0)", border: "2px solid rgba(106, 121, 104, 0.19)" }} />
                   <Typography
-                    variant="body2"
+                    variant="h7"
                     sx={{ mb: 2, color: "rgba(255,255,255,0.8)" }}
                   >
                     {service.description}
                   </Typography>
 
-                  <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 3 }}>
+                  <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mt: 4 }}>
                     {service.tags.map((t, i) => (
                       <Chip
                         key={i}

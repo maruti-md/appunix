@@ -133,14 +133,14 @@ export default function Home() {
                 variant="contained"
                 size="large"
                 sx={{
-                  bgcolor: "#00e5ff",
+                  bgcolor: "#00ff7bce",
                   color: "#000",
                   fontWeight: 700,
                   borderRadius: "30px",
                   px: 4,
                   py: 1.5,
                   "&:hover": {
-                    transform: "translateY(-3px)",
+                    // transform: "translateY(-3px)",
                     boxShadow: "0px 10px 30px rgba(0,229,255,0.25)",
                   },
                 }}
@@ -151,14 +151,14 @@ export default function Home() {
               <Button
                 variant="outlined"
                 size="large"
-                color="secondary"
+                color="primary"
                 sx={{
                   borderRadius: "30px",
                   px: 4,
                   py: 1.5,
                   borderColor: "rgba(255, 255, 255, 0.91)",
                   color: "rgba(255, 255, 255, 1)",
-                  "&:hover": { transform: "translateY(-3px)" },
+                  // "&:hover": { transform: "translateY(-3px)" },
                 }}
               >
                 Learn More

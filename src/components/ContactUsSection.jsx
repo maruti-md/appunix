@@ -31,8 +31,11 @@ export default function ContactUs() {
           display: "flex",
           flexDirection: { xs: "column", md: "row" }, // responsive
           width: "100%",
-          bgcolor: "rgba(18, 18, 18, 1)", // glass effect
+          bgcolor: "rgba(28, 199, 99, 0.36)", // glass effect
           backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)", // Safari support
+          border: "1px solid rgba(255, 255, 255, 0.18)",
+          boxShadow: "0 8px 32px rgba(4, 105, 58, 0.34)",
          
         }}
       >
@@ -40,7 +43,7 @@ export default function ContactUs() {
         <Box
   sx={{
     flex: 1,
-    p: 3,
+    p: 2,
     display: "flex",               // ✅ Make it flex
     flexDirection: "column",       // ✅ Stack items vertically
     justifyContent: "center",      // ✅ Vertical center
@@ -60,18 +63,18 @@ export default function ContactUs() {
   <Box
     sx={{
       mt: 4,
-      p: 2,
-      background: "rgba(255, 255, 255, 0.1)", // semi-transparent
-      backdropFilter: "blur(12px)", // glass blur
-      WebkitBackdropFilter: "blur(12px)", // Safari support
-      borderRadius: "16px",
-      border: "1px solid rgba(255, 255, 255, 0.2)", // light border
-      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)", // subtle shadow
+      p: 1,
+      background: "rgba(1, 34, 26, 0.05)", // semi-transparent
+      backdropFilter: "blur(20px)", // glass blur
+      WebkitBackdropFilter: "blur(20px)", // Safari support
+      borderRadius: "40px",
+      // border: "1px solid rgba(255, 255, 255, 0.2)", // light border
+      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.48)", // subtle shadow
     }}
   >
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <MdEmail size={28} color="#00e676" />
-      <Typography sx={{ ml: 2 }}>john@example.com</Typography>
+      <Typography sx={{ ml: 1 }}>john@example.com</Typography>
     </Box>
   </Box>
 </Box>
@@ -87,7 +90,10 @@ export default function ContactUs() {
             bgcolor: "rgba(30, 30, 30, 1)",
             boxShadow: "0 8px 32px rgba(4, 105, 58, 0.34)",
             scale: "1.03",
-            // backdropFilter: "blur(12px)",
+            borderColor: "rgba(203, 42, 42, 0.92)",
+            // borderWidth: 2,
+            // borderStyle: "solid",
+            backdropFilter: "blur(12px)",
           }}
         >
           <Typography variant="h5" sx={{ mb: 3, fontWeight: "bold" }}>
@@ -162,10 +168,12 @@ export default function ContactUs() {
           <Button
             variant="contained"
             sx={{
-              bgcolor: "#00e676",
-              color: "black",
+              bgcolor: "rgba(28, 199, 99, 0.63)",
+              color: "white",
               fontWeight: "bold",
-              mt: "auto", // pushes button to bottom
+              p: 1.5,
+              borderRadius: "20px",
+              mt:2, // pushes button to bottom
               "&:hover": { bgcolor: "#00c853" },
             }}
           >
