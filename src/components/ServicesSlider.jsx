@@ -60,12 +60,12 @@ function numericFromCurrency(str = "") {
 
 export default function ServicesSlider() {
   return (
-    <Box sx={{ py: 10, px: 2, background: "transparent" }}>
+    <Box sx={{ py: 4, px: 2, background: "transparent" }}>
       <Typography
         variant="h2"
         align="center"
         sx={{
-          mb: 2,
+          mb: 4,
           fontWeight: "bold",
           // background: "linear-gradient(90deg,rgba(255, 255, 255, 0.28) 0%,rgba(255, 255, 255, 0.07)) 50%, rgba(237, 221, 83, 1) 100%)",
           WebkitBackgroundClip: "text",

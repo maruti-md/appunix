@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import PageWrapper from "./PageWrapper";
+import aboutUsBg from "../assets/about-us-bg.png";
+
 
 export default function AboutUsSection() {
   const [showMore, setShowMore] = useState(false);
@@ -12,22 +14,26 @@ export default function AboutUsSection() {
         sx={{
           width: "98.78vw",
           // marginLeft: "calc(50% - 50vw)",
-          minHeight: "100vh",
+          minHeight: "90vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "radial-gradient(circle at 20% 30%, #204339ff, #000 80%)",
+          // background: "radial-gradient(circle at 20% 30%, #204339ff, #000 80%)",
+          backgroundImage: `radial-gradient(circle at 20% 30%, rgba(32,67,57,0.8), rgba(0,0,0,0.6)),url(${aboutUsBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+          // backgroundRepeat: "no-repeat",
           color: "#fff",
           position: "relative",
           overflow: "hidden",
           px: 3,
-          py: 8,
+          py: 7,
           textAlign: "center",
         }}
       >
         {/* glowing blurred accents */}
-        <Box
+        {/* <Box
           sx={{
             position: "absolute",
             top: "-10%",
@@ -50,15 +56,15 @@ export default function AboutUsSection() {
             filter: "blur(80px)",
             zIndex: 0,
           }}
-        />
+        /> */}
 
         {/* top label */}
         <Button
           disableRipple
           sx={{
-            background: "rgba(255,255,255,0.05)",
+            background: "rgba(13, 187, 146, 0.39)",
             border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: "999px",
+            borderRadius: "99px",
             px: 3,
             py: 0.5,
             fontSize: "0.8rem",
@@ -80,29 +86,13 @@ export default function AboutUsSection() {
               fontSize: { xs: "2.5rem", md: "4rem" },
               fontWeight: 700,
               position: "relative",
-              color: "#fff",
+              color: "#ffffffd0",
               zIndex: 2,
             }}
           >
-            Not all Honest Design is Good
+            Where Technology Meets Possibility
           </Typography>
-          {/* ghosted duplicate behind */}
-          <Typography
-            component="h1"
-            aria-hidden="true"
-            sx={{
-              fontSize: { xs: "2.5rem", md: "4rem" },
-              fontWeight: 700,
-              position: "absolute",
-              top: 3,
-              left: 3,
-              color: "rgba(255,255,255,0.08)",
-              zIndex: 1,
-              whiteSpace: "nowrap",
-            }}
-          >
-            Not all Honest Design is Good
-          </Typography>
+          
         </Box>
 
         {/* subtitle */}
@@ -110,14 +100,14 @@ export default function AboutUsSection() {
           variant="body1"
           sx={{
             color: "rgba(255,255,255,0.7)",
-            maxWidth: 600,
+            maxWidth: 700,
             mx: "auto",
             mb: 4,
-            fontSize: "1rem",
+            fontSize: "1.5rem",
           }}
         >
-          Streamline your business’s financial management with our intuitive,
-          scalable platform.
+          At AppUnix, we transform challenges into opportunities through smart, 
+          reliable, and future-ready solutions for all
         </Typography>
 
         {/* buttons */}
@@ -132,31 +122,33 @@ export default function AboutUsSection() {
           }}
         >
           <Button
+          link href="/services"
             variant="outlined"
             sx={{
               borderRadius: "999px",
               px: 3,
               py: 1,
-              borderColor: "rgba(255,255,255,0.3)",
+              borderColor: "rgba(255, 255, 255, 0.91)",
               color: "#fff",
               textTransform: "uppercase",
               fontSize: "0.85rem",
-              "&:hover": { borderColor: "#fff", background: "rgba(255,255,255,0.05)" },
+              "&:hover": { borderColor: "#fff", color: "#fff", background: "rgba(255, 84, 16, 0.59)" },
             }}
           >
             Our Services
           </Button>
           <Button
+          link href="/contact"
             variant="outlined"
             sx={{
               borderRadius: "999px",
               px: 3,
               py: 1,
-              borderColor: "rgba(255,255,255,0.3)",
+              borderColor: "rgba(255,255,255,0.91)",
               color: "#fff",
               textTransform: "uppercase",
               fontSize: "0.85rem",
-              "&:hover": { borderColor: "#fff", background: "rgba(255,255,255,0.05)" },
+              "&:hover": { borderColor: "#fff", background: "rgba(255, 84, 16, 0.59)" },
             }}
           >
             Get in Touch
@@ -184,7 +176,7 @@ export default function AboutUsSection() {
             sx={{
               fontSize: "2rem",
               fontWeight: 500,
-              color: "#9b59ff",
+              color: "#06ff87ff",
               letterSpacing: "2px",
             }}
           >
@@ -198,9 +190,11 @@ export default function AboutUsSection() {
   variant="body1"
   sx={{
     color: "rgba(255, 255, 255, 0.8)",
-    fontSize: "1rem",
-    lineHeight: 1.8,
+    lineHeight: 1.4,
     maxWidth: "700px",
+    fontOpticalSizing:"auto",
+    fontSize:"1.2rem",
+    textAlign: "justify"
   }}
 >
   At AppUnix, we believe technology should do more than just work — it should empower.
@@ -221,9 +215,11 @@ export default function AboutUsSection() {
           variant="body1"
           sx={{
             color: "rgba(255, 255, 255, 0.8)",
-            fontSize: "1rem",
-            lineHeight: 1.8,
+            lineHeight: 1.4,
             mt: 2,
+            fontOpticalSizing:"auto",
+            fontSize:"1.2rem",
+            textAlign: "justify"
           }}
         >
   <strong>Why AppUnix</strong>

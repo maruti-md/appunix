@@ -44,7 +44,7 @@ const SignUpContainer = styled(Box)(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   // background: "linear-gradient(135deg, #182428ff 0%, #204339ff 50%, #2c644fff 100%)",
-  background: "radial-gradient(circle at 20% 30%, #204339ff, #000 80%)",
+  background: "radial-gradient(circle at 20% 30%, #204339ff, #06545479 80%)",
   color: 'white',
   overflowY: 'auto',    // ✅ allow vertical scrolling
   padding: '2rem 1rem', // ✅ some breathing space so footer doesn't overlap
@@ -183,7 +183,14 @@ export default function SignUp() {
               label="I want to receive updates via email."
             />
 
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 2, bgcolor: "#00ff88ff", color: "#000", fontWeight: "bold", "&:hover": { bgcolor: "#0c8c5dff" } }}>
+            <Button type="submit" fullWidth variant="contained" 
+            sx={{ 
+              mt: 2, bgcolor: "#00ff88ff", color: "#000", 
+              fontWeight: "bold", 
+              borderRadius: "30px",
+              py: 1.5,
+              "&:hover": { bgcolor: "#0c8c5dff" } 
+              }}>
               Sign up
             </Button>
           </Box>
@@ -196,6 +203,13 @@ export default function SignUp() {
           {/* Google Sign up */}
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
   {/* ✅ Google Sign-In button */}
+
+  {/* 
+  (alias) function GoogleLogin({ onSuccess, onError, useOneTap, 
+  promptMomentNotification, type, theme, 
+  size, text, shape, logo_alignment, width, locale, 
+  click_listener, containerProps, ...props }
+  */}
   <GoogleLogin
     onSuccess={(credentialResponse) => {
   const decoded = jwtDecode(credentialResponse.credential);
@@ -204,6 +218,12 @@ export default function SignUp() {
     onError={() => {
       console.log("Google Sign In Failed");
     }}
+    theme='filled_blue'
+    size='large'
+    text='continue_with'
+    shape='circle'
+    width='100%'
+    logo_alignment='left'
   />
 
   {/* Existing Sign in link */}

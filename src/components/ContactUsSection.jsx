@@ -64,7 +64,8 @@ export default function ContactUs() {
     sx={{
       mt: 4,
       p: 1,
-      background: "rgba(1, 34, 26, 0.05)", // semi-transparent
+      px: 3,
+      background: "rgba(172, 111, 18, 0.66)", // semi-transparent
       backdropFilter: "blur(20px)", // glass blur
       WebkitBackdropFilter: "blur(20px)", // Safari support
       borderRadius: "40px",
